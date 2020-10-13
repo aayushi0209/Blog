@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <style type="text/css">
+        body{
+          background-image: linear-gradient(to top right,#00dbdf,#dc06e4);
+
+      justify-content: center;
+      align-items: center;
+        }
+      </style>
+</head>
+<body>
+
+<header class="my-5 container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed my-5 ">
+  <a class="navbar-brand" href="#"><h2>Blog</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link text-align-right" href="/login_page">Login</a>
+      <a class="nav-item nav-link text-align-right" href="/register">Register</a>
+ </div>
+  </div>
+</nav>
+</header>
+
+<div class="container my-5">
+
+	<div class="col-12 ">
+
+<h4>{{post.title}}</h4>
+		<p>by {{post.author}} on {{post.date_posted}}</p>
+<h5>{{post.content}}</h5>
+</div>
+
+<hr>
+</div>
+</body>
+</html>

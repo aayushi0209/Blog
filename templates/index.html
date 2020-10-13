@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<title>Blogs</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <style type="text/css">
+        body{
+          background-image: linear-gradient(to top right,#00dbdf,#dc06e4);
+
+      justify-content: center;
+      align-items: center;
+        }
+      </style>
+</head>
+<body>
+<header class="my-5 container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed my-5 ">
+  <a class="navbar-brand" href="#"><h2>Blog</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link text-align-right" href="/login_page">Login</a>
+      <a class="nav-item nav-link text-align-right" href="/register">Register</a>
+ </div>
+  </div>
+</nav>
+</header>
+    <!--	*********************************************************************************************************-->
+
+<!-- ******************************************************************* -->
+ <div class="container my-5">
+    {% for post in page_obj %}
+    <div class="col-12 ">
+
+<h3>{{post.title}}</h3>
+    <p>by {{post.author}} on {{post.date_posted}}</p>    
+    <h6>{{post.content|slice:"0:400"}}..</h6>
+<a class="text-warning" href="/posts_view/{{post.post_id}}">Read More</a>
+<div class="col-12 ">
+</div>
+</div>
+
+<hr>
+{% endfor%}
+</div>
+<div class="container">
+  <h5>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="text-danger">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="text-danger">Prev</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="text-danger">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="text-danger">Last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</h5>
+</div>
+</body>
+</html>

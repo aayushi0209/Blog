@@ -1,0 +1,25 @@
+{% extends  'basic2.html' %}
+{% load crispy_forms_tags %}
+{% block body%}
+<form action="/update_post/{{post.post_id}}" method="post">
+        {% csrf_token %}
+        <fieldset class="form-group my-3">
+            <legend class="border-bottom "><h3>Update Post</h3></legend>
+     <div class="row">
+   	<div class="col-12">         
+            <label for="title1"><h5>Title</h5></label>
+    		<input type="text" class="form-control" id="title1" name="title" autocomplete="off" required value={{post.title}}>
+   </div>         
+   <div class="col-12 ">
+  		<label for="content1"><h5>Content</h5></label>
+  		<input type="textarea" class="form-control" id="content1" rows="10" name="content" required    value={{post.content}}>
+  		</textarea>
+  </div>
+</div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info " type="submit">Update</button>
+        </div>
+    </form>
+ 
+ {% endblock %}

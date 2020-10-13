@@ -1,0 +1,113 @@
+<!--basic view for login.html and  register.html page-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Blogs</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ <style type="text/css">
+        body{
+          background-image: linear-gradient(to top right,#00dbdf,#dc06e4);
+
+      justify-content: center;
+      align-items: center;
+        }
+        button{
+			background-image: linear-gradient(to top right,#000000,#f606ff);
+				color: white;
+				width: 150px;
+				height: 40px;
+				border:none;
+				border-radius: 15px;
+				display: flex;
+				align-self: center;
+				margin-top: 30px;
+				justify-content: center:center;
+				font-size: 16px;
+				text-align: center;
+				outline: none;
+				cursor: pointer;
+				transition: all 0.3 ease;
+				padding-left: 50px;
+			}
+		button:hover{
+			transform: translateY(7px);
+		}
+		h1{
+			align-self: center;
+			color: #333333;
+			padding-top: 20px;
+			margin-bottom: 30px;
+		}
+			width: 300px;
+			height: 400px;
+			position: relative;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			border-radius: 15px;
+			padding: 0 15px 0 15px;
+			box-shadow: 0px 25px 36px 12px rgba(0,0,0,0.51);
+		}
+		.form1 input{
+			width: 100%;
+			height: 50px;
+			padding-top: 20px;
+			color:#363636;
+			border:none;
+			background-color: #fff;
+			border-bottom: 2px solid #9b9b9b;
+			outline: none;
+		}
+		.form1 label{
+			transform: translateY(-50px);
+			pointer-events: none;
+		}
+		.contentText,.contentPass{
+			position: absolute;
+			top:25px;
+			color: #9b9b9b;
+			transition: all 0.3s ease;
+
+		}
+		.form1 input:focus+.labelText .contentText,
+		.form1 input:valid+.labelText .contentText{
+			transform: translateY(-100%);
+			font-size: 14px;
+			color:#333;
+		}
+		.form1 input:focus+.labelPass .contentPass,
+		.form1 input:valid+.labelPass .contentPass{
+			transform: translateY(-100%);
+			font-size: 14px;
+			color:#333;
+		}
+      </style>
+
+</head>
+<body>
+<header class="my-5 container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-5">
+  <a class="navbar-brand" href="/"><h2>Blog</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="/home">YourBlogs <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/profile">Profile</a>
+      <a class="nav-item nav-link" href="/add_post">AddBlogs</a>
+
+<!--      <a class="nav-item nav-link text-align-right" href="/login_page">Login</a>-->
+      <a class="nav-item nav-link text-align-right" href="/logout_page">Logout</a>
+ </div>
+  </div>
+</nav>
+</header>
+ <div class="container my-5">
+ {% block body %} {% endblock %}
+</div>
+</body>
+</html>
